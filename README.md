@@ -7,7 +7,9 @@ In this example, the color get picked up while the application is starting.
 # Important Knowledge
 
 Understand How to create angular custom theme variable.
+
 Understand OverlayContainer
+
 Understand CSS var() 
 
 
