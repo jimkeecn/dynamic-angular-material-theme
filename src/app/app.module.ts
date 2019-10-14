@@ -36,10 +36,12 @@ import { MatTableModule } from "@angular/material/table";
 import { MatSortModule } from "@angular/material/sort";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { AppConfigService } from "./app-config.service";
+import { OverlayContainer } from "@angular/cdk/overlay";
 
 class color {
   primaryColor: string;
   secondaryColor: string;
+  fontName: string;
 }
 
 const appInitializerFn = (appConfig: AppConfigService) => {
@@ -52,6 +54,10 @@ const appInitializerFn = (appConfig: AppConfigService) => {
       document.documentElement.style.setProperty(
         "--secondary-color",
         response.secondaryColor
+      );
+      document.documentElement.style.setProperty(
+        "--font-name",
+        response.fontName
       );
     });
   };
@@ -106,4 +112,8 @@ const appInitializerFn = (appConfig: AppConfigService) => {
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+  constructor(overlayContainer: OverlayContainer) {
+    overlayContainer.getContainerElement().classList.add("my-own-color");
+  }
+}

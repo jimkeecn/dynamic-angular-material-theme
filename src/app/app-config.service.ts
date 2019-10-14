@@ -10,7 +10,12 @@ export class AppConfigService {
     return new Promise(resolve => {
       setTimeout(() => {
         console.log("In initApp");
-        resolve({ primaryColor: "#a8353a", secondaryColor: "#003d69" });
+
+        resolve({
+          primaryColor: "#a8353a",
+          secondaryColor: "#003d69",
+          fontName: "Roboto"
+        });
       }, 1000);
     });
   }
